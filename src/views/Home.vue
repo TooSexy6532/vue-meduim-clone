@@ -1,9 +1,25 @@
 <template>
-  <h1>hi home</h1>
+  <div class="home-page">
+    BANNER
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-9">
+          <McvFeedView :url="apiUrl" />
+        </div>
+        <div class="col-md-3">tags</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+import McvFeedView from '@/components/FeedView'
+export default {
+  components: {McvFeedView},
+  data() {
+    return {
+      apiUrl: '/articles',
+    }
+  },
+}
 </script>
-
-<style></style>
