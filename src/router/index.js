@@ -3,6 +3,11 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Home from '@/views/Home.vue'
 import Register from '@/views/Register'
 import Login from '@/views/Login'
+import YourFeed from '@/views/YourFeed'
+import TagFeed from '@/views/TagFeed'
+import Article from '@/views/Article.vue'
+import CreateArticle from '@/views/CreateArticle'
+import EditArticle from '@/views/EditArticle'
 
 const routes = [
   {
@@ -22,28 +27,28 @@ const routes = [
   },
   {
     path: '/feed',
-    name: 'yorFeed',
-    component: Home,
+    name: 'yourFeed',
+    component: YourFeed,
   },
   {
-    path: '/tag/:slug',
+    path: '/tags/:slug',
     name: 'tag',
-    component: Home,
+    component: TagFeed,
   },
   {
     path: '/articles/new',
     name: 'createArticle',
-    component: Home,
+    component: CreateArticle,
   },
   {
     path: '/articles/:slug',
     name: 'article',
-    component: Home,
+    component: Article,
   },
   {
     path: '/articles/:slug/edit',
     name: 'editArticle',
-    component: Home,
+    component: EditArticle,
   },
   {
     path: '/settings',
