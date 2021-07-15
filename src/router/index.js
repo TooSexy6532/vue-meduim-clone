@@ -8,6 +8,8 @@ import TagFeed from '@/views/TagFeed'
 import Article from '@/views/Article.vue'
 import CreateArticle from '@/views/CreateArticle'
 import EditArticle from '@/views/EditArticle'
+import Settings from '@/views/Settings'
+import UserProfile from '@/views/UserProfile'
 
 const routes = [
   {
@@ -53,17 +55,17 @@ const routes = [
   {
     path: '/settings',
     name: 'settings',
-    component: Home,
+    component: Settings,
   },
   {
     path: '/profiles/:slug',
     name: 'userProfile',
-    component: Home,
+    component: UserProfile,
   },
   {
     path: '/profiles/:slug/favorites',
     name: 'userProfileFavorites',
-    component: Home,
+    component: UserProfile,
   },
 ]
 

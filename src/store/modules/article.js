@@ -1,4 +1,5 @@
 import articleApi from '@/api/article'
+import {mutationTypes as addToFavoriteMutationTypes} from '@/store/modules/addToFavorites'
 
 const state = {
   data: null,
@@ -32,9 +33,18 @@ const mutations = {
   [mutationTypes.getArticleFailure](state) {
     state.isLoading = false
   },
+
   [mutationTypes.deleteArticleStart]() {},
   [mutationTypes.deleteArticleSuccess]() {},
   [mutationTypes.deleteArticleFailure]() {},
+
+  [addToFavoriteMutationTypes.addToFavoritesSuccess](state, payload) {
+    state.data = payload
+  },
+
+  [addToFavoriteMutationTypes.followUserSuccess](state, payload) {
+    state.data.author = payload
+  },
 }
 
 const actions = {

@@ -3,40 +3,11 @@
     <div class="banner">
       <div class="container">
         <h1>{{ article.title }}</h1>
-        <div class="article-meta">
-          <router-link
-            :to="{name: 'home', params: {slug: article.author.username}}"
-          >
-            <img :src="article.author.image" alt="author avatar" />
-          </router-link>
-          <div class="info">
-            <router-link
-              :to="{
-                name: 'home',
-                params: {slug: article.author.username},
-              }"
-            >
-              {{ article.author.username }}
-            </router-link>
-            <span class="date">{{ article.createdAt }}</span>
-          </div>
-          <span v-if="isAuthor">
-            <router-link
-              class="btn btn-outline-secondary btn-sm"
-              :to="{name: 'editArticle', params: {slug: article.slug}}"
-            >
-              <i class="ion-edit" />
-              Edit article
-            </router-link>
-            <button
-              class="btn btn-sm btn-outline-danger"
-              @click="deleteArticle"
-            >
-              <i class="ion-trash-a" />
-              Delete article
-            </button>
-          </span>
-        </div>
+        <McvArticleMeta
+          :article="article"
+          :isAuthor="isAuthor"
+          @deleteArticle="deleteArticle"
+        />
       </div>
     </div>
     <div class="page container">
@@ -51,6 +22,15 @@
           <McvTagList :tags="article.tagList" />
         </div>
       </div>
+      <hr />
+      <div class="article-actions">
+        <McvArticleMeta
+          :article="article"
+          :isAuthor="isAuthor"
+          @deleteArticle="deleteArticle"
+        />
+      </div>
+      <McvComments />
     </div>
   </div>
 </template>
@@ -63,10 +43,18 @@ import {getterTypes} from '@/store/modules/auth'
 import McvLoading from '@/components/Loading'
 import McvErrorMessage from '@/components/ErrorMessage'
 import McvTagList from '@/components/TagList'
+import McvArticleMeta from '@/components/ArticleMeta'
+import McvComments from '@/components/Comments'
 
 export default {
   name: 'McvArticle',
-  components: {McvTagList, McvErrorMessage, McvLoading},
+  components: {
+    McvComments,
+    McvArticleMeta,
+    McvTagList,
+    McvErrorMessage,
+    McvLoading,
+  },
   computed: {
     ...mapState({
       isLoading: (state) => state.article.isLoading,

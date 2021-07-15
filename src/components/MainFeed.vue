@@ -26,7 +26,13 @@
             </router-link>
             <span class="date">{{ article.createdAt }}</span>
           </div>
-          <div class="pull-xs-right">ADD TO FAVORITES</div>
+          <div class="pull-xs-right">
+            <McvAddToFavorites
+              :isFavorited="article.favorited"
+              :favoritesCount="article.favoritesCount"
+              :slug="article.slug"
+            />
+          </div>
         </div>
         <router-link
           :to="{name: 'article', params: {slug: article.slug}}"
@@ -57,10 +63,17 @@ import {stringify, parseUrl} from 'query-string'
 import McvLoading from '@/components/Loading'
 import McvErrorMessage from '@/components/ErrorMessage'
 import McvTagList from '@/components/TagList'
+import McvAddToFavorites from '@/components/AddToFavorites'
 
 export default {
   name: 'McvMainFeed',
-  components: {McvTagList, McvErrorMessage, McvLoading, McvPagination},
+  components: {
+    McvAddToFavorites,
+    McvTagList,
+    McvErrorMessage,
+    McvLoading,
+    McvPagination,
+  },
   props: {
     apiUrl: {
       type: String,
@@ -95,8 +108,11 @@ export default {
     currentPage() {
       this.fetchFeed()
     },
+    apiUrl() {
+      this.fetchFeed()
+    },
   },
-  mounted() {
+  created() {
     this.fetchFeed()
   },
   methods: {

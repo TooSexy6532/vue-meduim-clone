@@ -17,7 +17,7 @@
           </li>
 
           <li class="nav-item">
-            <router-link class="nav-link" :to="{name: 'home'}">
+            <router-link class="nav-link" :to="{name: 'settings'}">
               <i class="ion-gear-a" />
               &nbsp; Settings
             </router-link>
@@ -26,7 +26,7 @@
           <li class="nav-item">
             <router-link
               class="nav-link"
-              :to="{name: 'home', params: {slug: currentUser.username}}"
+              :to="{name: 'userProfile', params: {slug: currentUser.username}}"
             >
               <img class="user-pic" :src="currentUser.image" />
               &nbsp;
