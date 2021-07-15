@@ -1,4 +1,4 @@
-# big_project
+# vue-medium-clone
 
 ## Project setup
 ```
