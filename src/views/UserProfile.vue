@@ -58,7 +58,7 @@
               </li>
             </ul>
           </div>
-          <McvMainFeed :apiUrl="apiUrl" />
+          <McvMainFeed :api-url="apiUrl" />
         </div>
       </div>
     </div>

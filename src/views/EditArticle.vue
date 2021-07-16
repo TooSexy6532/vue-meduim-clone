@@ -3,9 +3,9 @@
     <McvLoading v-if="isLoading" />
     <McvArticleForm
       v-if="initialValues"
-      :initialValues="initialValues"
+      :initial-values="initialValues"
       :errors="validationErrors"
-      :isSubmitting="isSubmitting"
+      :is-submitting="isSubmitting"
       @articleSubmit="onSubmit"
     />
   </div>

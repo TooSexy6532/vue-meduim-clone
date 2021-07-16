@@ -28,8 +28,8 @@
           </div>
           <div class="pull-xs-right">
             <McvAddToFavorites
-              :isFavorited="article.favorited"
-              :favoritesCount="article.favoritesCount"
+              :is-favorited="article.favorited"
+              :favorites-count="article.favoritesCount"
               :slug="article.slug"
             />
           </div>

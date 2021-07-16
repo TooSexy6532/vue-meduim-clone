@@ -1,8 +1,8 @@
 <template>
   <McvArticleForm
-    :initialValues="initialValues"
+    :initial-values="initialValues"
     :errors="validationErrors"
-    :isSubmitting="isSubmitting"
+    :is-submitting="isSubmitting"
     @articleSubmit="onSubmit"
   />
 </template>

@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-9">
           <McvFeedToggler :tag-name="tagName" />
-          <McvMainFeed :apiUrl="apiUrl" />
+          <McvMainFeed :api-url="apiUrl" />
         </div>
         <McvPopularTags />
       </div>

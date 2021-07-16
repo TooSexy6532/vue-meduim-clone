@@ -25,9 +25,9 @@
         }}
       </McvFollowUser>
       <McvAddToFavorites
-        :inArticle="true"
-        :isFavorited="article.favorited"
-        :favoritesCount="article.favoritesCount"
+        :in-article="true"
+        :is-favorited="article.favorited"
+        :favorites-count="article.favoritesCount"
         :slug="article.slug"
       >
         {{

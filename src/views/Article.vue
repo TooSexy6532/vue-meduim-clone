@@ -5,7 +5,7 @@
         <h1>{{ article.title }}</h1>
         <McvArticleMeta
           :article="article"
-          :isAuthor="isAuthor"
+          :is-author="isAuthor"
           @deleteArticle="deleteArticle"
         />
       </div>
@@ -26,7 +26,7 @@
       <div class="article-actions">
         <McvArticleMeta
           :article="article"
-          :isAuthor="isAuthor"
+          :is-author="isAuthor"
           @deleteArticle="deleteArticle"
         />
       </div>
