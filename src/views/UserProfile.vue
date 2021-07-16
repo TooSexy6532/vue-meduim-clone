@@ -8,7 +8,7 @@
             <h4>{{ userProfile.username }}</h4>
             <p>{{ userProfile.bio }}</p>
             <div>
-              <McvFollowUser :author="userProfile">
+              <McvFollowUser v-if="!isCurrentUserProfile" :author="userProfile">
                 {{
                   userProfile.following
                     ? 'Unfollow' + ' ' + userProfile.username
